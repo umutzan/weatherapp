@@ -8,6 +8,7 @@ const getLocationMW = async (req, res, next) => {
         let lang = langData.split(",")[0] || "eng";
 
         req.body.ip = ip.address().toString() || null;
+        console.log(req.body.ip)
         req.body.lang = lang;
 
 
