@@ -1,13 +1,14 @@
 const express = require("express");
 
 const getLocationMiddleware = require("../middlewares/getLocationMiddleware");
+const getWeather = require("../middlewares/getWeatherData");
+const dataEditorMiddleware = require("../middlewares/dataEditorMiddleware");
 
-const weatherController = require("../controllers/weatherController");
 const pageController = require("../controllers/pageController");
 
 const pageRouter = express.Router();
 
-pageRouter.route("/").get(getLocationMiddleware, weatherController.getWeather, pageController.index);
+pageRouter.route("/").get(getLocationMiddleware, getWeather, dataEditorMiddleware, pageController.index);
 
 
 module.exports = pageRouter;

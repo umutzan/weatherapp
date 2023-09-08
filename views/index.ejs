@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
-    <link rel="icon" type="image/png" href=<%=data.current.condition.icon%>>
+    <link rel="icon" type="image/png" href=<%=data.cond.icon%>>
 </head>
 
 <body>
@@ -21,15 +21,17 @@
         </form>
     </div>
     <div>
-        <img src=<%=data.current.condition.icon%> alt=<%=data.current.condition.text%> >
-        <h4><%=data.current.temp_c%> C° | <%=data.current.temp_f%> F°</h4>
+        <img src=<%=data.cond.icon%> alt=<%=data.cond.text%> >
             <h4>
-                <%=data.current.condition.text%>
+                <%=data.temp.c%> C° | <%=data.temp.f%> F°
+            </h4>
+            <h4>
+                <%=data.cond.text%>
             </h4>
             <h3>
-                <%=data.location.name%>, <%=data.location.region%>
-                        <%=data.location.country%>
-                            </h2>
+                <%=data.location.city%>
+                    <%=data.location.country%>
+                        </h2>
     </div>
 
 </body>

@@ -24,32 +24,31 @@ function checkerArm(location, lang, req, res, next) {
     });
 }
 
-class weatherC {
-    async getWeather(req, res, next) {
+const getWeather = async (req, res, next) => {
 
-        let gIP = req.body.ip;
-        let gLocation = req.body.location;
-        let gLang = req.body.lang;
+    let gIP = req.body.ip;
+    let gLocation = req.body.location;
+    let gLang = req.body.lang;
 
-        if (req.query.q == undefined) {  //eğer q ile lokasyon bilgisi gelmez ise
+    if (req.query.q == undefined) {  //eğer q ile lokasyon bilgisi gelmez ise
 
-            if (gLocation == undefined) {
-                checkerArm(gIP, gLang, req, res, next);//ip ile konum bulma
-
-            } else {
-                checkerArm(gLocation, gLang, req, res, next);//kordinat ile konum bulma
-            }
-
+        if (gLocation == undefined) {
+            checkerArm(gIP, gLang, req, res, next);//ip ile konum bulma
 
         } else {
-            checkerArm(req.query.q, gLang, req, res, next);//q ile konum bulma
+            checkerArm(gLocation, gLang, req, res, next);//kordinat ile konum bulma
         }
 
 
-
-
+    } else {
+        checkerArm(req.query.q, gLang, req, res, next);//q ile konum bulma
     }
+
+
+
+
+
 
 }
 
-module.exports = new weatherC();
+module.exports = getWeather;
