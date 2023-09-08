@@ -4,7 +4,7 @@ require('dotenv').config();
 
 
 function noIP(lang) {
-    return axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.KEY}&q=istanbul&lang=${lang}`)
+    return axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.KEY}&q=new%20york&lang=${lang}`)
 }
 function getWithLocation(location, lang) {
     return axios.get(`http://api.weatherapi.com/v1/current.json?key=${process.env.KEY}&q=${location}&lang=${lang}`)
