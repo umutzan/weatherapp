@@ -3,8 +3,20 @@
 
 <head>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
         div {
             text-align: center;
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #333;
         }
     </style>
     <meta charset="UTF-8">
@@ -15,26 +27,37 @@
 
 <body>
     <div>
-        <img src="/logo.png" alt="logo" style="max-width:20%;height: auto;">
+        <a href="/"><img src="/logo.png" alt="logo" style="max-width:20%;height: auto;"></a>
     </div>
     <div>
         <form id="search-form">
-            <input type="text" id="search-input" name="q" placeholder="Ara...">
-            <input type="submit" value="Ara">
+            <input type="text" id="search-input" name="q" placeholder="Location...">
+            <input type="submit" value="Go">
         </form>
     </div>
     <div>
-        <img src=<%=data.cond.icon%> alt=<%=data.cond.text%> >
-            <h4>
-                <%=data.temp.c%> C° | <%=data.temp.f%> F°
-            </h4>
-            <h4>
-                <%=data.cond.text%>
-            </h4>
-            <h3>
-                <%=data.location.city%>
-                    <%=data.location.country%>
-                        </h2>
+        <h3>
+            <%=data.location.city%>
+                <%=data.location.country%>
+                    </h2>
+                    <h1> </h1>
+                    <img src=<%=data.cond.icon%> alt=<%=data.cond.text%> >
+                        <h4>
+                            <%=data.temp.c%> C° | <%=data.temp.f%> F°
+                        </h4>
+                        <h4>
+                            <%=data.cond.text%>
+                        </h4>
+                        <div>
+                            <h3>Wind</h3>
+                            <h4>
+                                Rotation: <%=data.wind.dir.c16%> | <%=data.wind.dir.deg%>°
+                            </h4>
+                            <h4>
+                                Speed: <%=data.wind.speed.km%> kph | <%=data.wind.speed.mil%> mph
+                            </h4>
+                        </div>
+
     </div>
 
 </body>
