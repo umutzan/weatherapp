@@ -4,7 +4,7 @@ const getLocationMW = async (req, res, next) => {
 
         let oldData = req.body.data;
 
-        let newData = {
+        let newData = { // data restructuring
             "location": {
                 "city": oldData.location.name + ", " + oldData.location.region,
                 "country": oldData.location.country || "",
